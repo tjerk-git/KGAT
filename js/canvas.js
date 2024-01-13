@@ -121,6 +121,7 @@ checkbox.addEventListener('sl-change', event => {
   if (event.target.checked) {
     activeText.innerHTML = "aan";
     can.style.cursor = "none";
+    init()
   } else {
     lightsOn();
     activeText.innerHTML = "uit";
