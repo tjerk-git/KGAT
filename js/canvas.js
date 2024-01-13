@@ -30,20 +30,11 @@ function init(imageIndex = 0) {
   can.width = canvasOverlayWidth;
   can.height = canvasOverlayHeight;
 
-  // get the width of the div above the canvas
-
-  // img.onload = function () {
-  //   redraw({
-  //     x: -can.width,
-  //     y: -can.height,
-  //   });
-  // };
-
   // calculate the middle of the canvas
   let middleX = can.width / 2;
   let middleY = can.height / 2;
 
-  redraw({ x: middleX, y: middleX });
+  redraw({ x: middleX, y: middleY });
 }
 
 can.addEventListener(
@@ -69,12 +60,12 @@ can.addEventListener(
 
 function redraw(mouse) {
 
-  if (checkbox.checked) {
+  if (!checkbox.checked) {
     return;
   }
 
   can.width = can.width;
-  ctx.drawImage(img, 0, 0, can.width, can.height);
+  ctx.drawImage(img, 0, 0, 1920, 1080);
   ctx.beginPath();
   ctx.rect(0, 0, can.width, can.height);
 
@@ -92,7 +83,7 @@ function redraw(mouse) {
 
 function lightsOn() {
   can.width = can.width;
-  ctx.drawImage(img, 0, 0, can.width, can.height);
+  ctx.drawImage(img, 0, 0, 1920, 1080);
   ctx.beginPath();
   ctx.rect(0, 0, can.width, can.height);
   ctx.fillStyle = "rgba(255, 255, 255, 0)";
@@ -125,29 +116,22 @@ document.addEventListener("DOMContentLoaded", function () {
   init();
 });
 
-window.addEventListener("resize", function () {
-  init();
-});
-
 
 checkbox.addEventListener('sl-change', event => {
-  console.log(event.target.checked ? 'checked' : 'not checked');
-
   if (event.target.checked) {
+    activeText.innerHTML = "aan";
+    can.style.cursor = "none";
+  } else {
     lightsOn();
     activeText.innerHTML = "uit";
     can.style.cursor = "pointer";
-  } else {
-    init();
-    activeText.innerHTML = "aan";
-    can.style.cursor = "none";
   }
 });
 
 
 menu.addEventListener('sl-select', event => {
 
-  checkbox.checked = false;
+  checkbox.checked = true;
   activeText.innerHTML = "aan";
   can.style.cursor = "none";
 
