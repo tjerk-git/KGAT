@@ -35,7 +35,7 @@ const isUserUsingMobile = () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   if (!isUserUsingMobile()) {
-    var cursor = document.querySelector(".cursor");
+    const cursor = document.querySelector(".cursor");
 
     function moveCursor(e) {
       cursor.style.top = e.clientY - cursor.offsetHeight / 2 + "px";
