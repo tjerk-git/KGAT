@@ -79,6 +79,10 @@ img{
 	transition: transform 0.2s;
 } */
 
+.hidden{
+  display:none;
+}
+
 .canvas{
   height:90vh;
   position:relative;  
@@ -176,8 +180,96 @@ canvas img{
 #whatis{
   display:flex;
   justify-content:center;
+  padding-left:2rem;
+  padding-right:2rem;
+  margin-top:12rem;
+  margin-bottom:12rem;
 }
 
-#whatis svg{
+#whatis figure{
+  display:flex;
+  justify-content:center;
+}
+
+#whatis img{
   width:350px;
+  margin-top:2rem;
+  margin-bottom:2rem;
+}
+
+#grid{
+  max-width: 64rem;
+	display: grid;
+  grid-auto-flow: column;
+  grid-gap: 2rem;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 50% 50%;
+}
+
+#camera-container {
+	position: relative;
+	overflow: hidden;
+	border-radius: 50%;
+	width: 200px; /* Adjust the size as needed */
+	height: 200px; /* Adjust the size as needed */
+	display:none;
+  background:black;
+}
+
+#contact{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  height: 80vh;
+}
+
+#contact_text{
+  max-width: 64rem;
+  margin-top: 12rem;
+  margin-bottom: 12rem;
+  text-align:center;
+}
+
+video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.giant-circle-button {
+  width: 200px; /* Adjust the width as needed */
+  height: 200px; /* Adjust the height as needed */
+  background-color: black;
+  border-radius: 50%; /* Creates a circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem; /* Adjust the font size as needed */
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Add box-shadow to the transition */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Initial box shadow */
+	transition: 0.3s;
+	border: none;
+  cursor:pointer;
+}
+
+footer{
+  text-align:center;
+  padding-top:2rem;
+  padding-bottom:2rem;
+}
+
+.gum{
+  color: pink;
+  text-decoration: none;
+  cursor:pointer;
+  transition: all 1s ease-in-out;
+}
+
+.gum:hover{
+  color: #FF79A3;
+  transform: scale(1.1);
+  text-decoration: underline;
 }
