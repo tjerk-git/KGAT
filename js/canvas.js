@@ -7,6 +7,7 @@ const menu = document.querySelector('sl-menu');
 const cursor = document.querySelector(".cursor");
 const currentPhoto = document.querySelector("#currentPhoto");
 
+let selectedPhoto = 0;
 let img;
 
 function init(imageIndex = 0) {
@@ -121,7 +122,7 @@ checkbox.addEventListener('sl-change', event => {
   if (event.target.checked) {
     activeText.innerHTML = "aan";
     can.style.cursor = "none";
-    init()
+    init(selectedPhoto);
   } else {
     lightsOn();
     activeText.innerHTML = "uit";
@@ -138,12 +139,16 @@ menu.addEventListener('sl-select', event => {
 
   if (event.detail.item.value === "nachtwacht") {
     init(0);
+
+    selectedPhoto = 0;
     currentPhoto.innerHTML = "De Nachtwacht";
   } else if (event.detail.item.value === "nature") {
     init(1);
+    selectedPhoto = 1;
     currentPhoto.innerHTML = "Natuur";
   } else if (event.detail.item.value === "japan") {
     init(2);
+    selectedPhoto = 2;
     currentPhoto.innerHTML = "Japan";
   }
 
