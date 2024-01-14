@@ -38,15 +38,23 @@ function init(imageIndex = 0, force = false) {
 
   console.log('init');
 
-  redraw({ x: middleX, y: middleY }, force);
+  if (force === true && checkbox.checked === false) {
+    lightsOn();
+    return;
+  } else {
+    redraw({ x: middleX, y: middleY });
+  }
 }
 
 can.addEventListener(
   "mousemove",
   function (e) {
+    if (checkbox.checked === false) {
+      return;
+    }
     e.preventDefault(); // Prevent scrolling on touch devices
     var mouse = getMouse(e, can);
-    redraw(mouse, false);
+    redraw(mouse);
   },
   false,
 );
@@ -54,21 +62,24 @@ can.addEventListener(
 can.addEventListener(
   "touchmove",
   function (e) {
+    if (checkbox.checked === false) {
+      return;
+    }
     e.preventDefault(); // Prevent scrolling on touch devices
     let touch = e.touches[0];
     let touchMouse = getMouse(touch, can);
-    redraw(touchMouse, false);
+    redraw(touchMouse);
   },
   false,
 );
 
-function redraw(mouse, force) {
+function redraw(mouse) {
 
-  if (!checkbox.checked && force === false) {
+  if (checkbox.checked === false) {
     return;
   }
 
-  console.log(`redraw by ${force}`);
+  console.log(`redraw by ${checkbox.checked}`);
 
   can.width = can.width;
   ctx.drawImage(img, 0, 0, 1920, 1080);
