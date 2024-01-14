@@ -11,7 +11,7 @@ let selectedPhoto = 0;
 
 let img;
 
-function init(imageIndex = 0) {
+function init(imageIndex = 0, force = false) {
   const canvasOverlay = document.querySelector("#canvas_container");
   const canvasOverlayWidth = canvasOverlay.offsetWidth;
   const canvasOverlayHeight = canvasOverlay.offsetHeight;
@@ -36,7 +36,9 @@ function init(imageIndex = 0) {
   let middleX = can.width / 2;
   let middleY = can.height / 2;
 
-  redraw({ x: middleX, y: middleY });
+  console.log('init');
+
+  redraw({ x: middleX, y: middleY }, force);
 }
 
 can.addEventListener(
@@ -44,7 +46,7 @@ can.addEventListener(
   function (e) {
     e.preventDefault(); // Prevent scrolling on touch devices
     var mouse = getMouse(e, can);
-    redraw(mouse);
+    redraw(mouse, false);
   },
   false,
 );
@@ -55,16 +57,18 @@ can.addEventListener(
     e.preventDefault(); // Prevent scrolling on touch devices
     let touch = e.touches[0];
     let touchMouse = getMouse(touch, can);
-    redraw(touchMouse);
+    redraw(touchMouse, false);
   },
   false,
 );
 
-function redraw(mouse) {
+function redraw(mouse, force) {
 
-  if (!checkbox.checked) {
+  if (!checkbox.checked && force === false) {
     return;
   }
+
+  console.log(`redraw by ${force}`);
 
   can.width = can.width;
   ctx.drawImage(img, 0, 0, 1920, 1080);
@@ -116,11 +120,11 @@ function getMouse(e, canvas) {
 
 // on window resize, update the canvas size
 window.addEventListener("resize", function () {
-  init(selectedPhoto);
+  init(selectedPhoto, true);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  init();
+  init(0);
 });
 
 
