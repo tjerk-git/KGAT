@@ -8,6 +8,7 @@ const cursor = document.querySelector(".cursor");
 const currentPhoto = document.querySelector("#currentPhoto");
 
 let selectedPhoto = 0;
+
 let img;
 
 function init(imageIndex = 0) {
@@ -112,6 +113,11 @@ function getMouse(e, canvas) {
     y: my,
   };
 }
+
+// on window resize, update the canvas size
+window.addEventListener("resize", function () {
+  init(selectedPhoto);
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   init();
