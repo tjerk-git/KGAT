@@ -36,12 +36,14 @@ function init(imageIndex = 0, force = false) {
   let middleX = can.width / 2;
   let middleY = can.height / 2;
 
-  console.log('init');
+  console.log(`middleX: ${middleX} middleY: ${middleY}`)
+
 
   if (force === true && checkbox.checked === false) {
     lightsOn();
     return;
   } else {
+    console.log('redraw by init');
     redraw({ x: middleX, y: middleY });
   }
 }
@@ -54,6 +56,8 @@ can.addEventListener(
     }
     e.preventDefault(); // Prevent scrolling on touch devices
     var mouse = getMouse(e, can);
+
+    console.log('redraw by mousemove');
     redraw(mouse);
   },
   false,
@@ -68,6 +72,7 @@ can.addEventListener(
     e.preventDefault(); // Prevent scrolling on touch devices
     let touch = e.touches[0];
     let touchMouse = getMouse(touch, can);
+    console.log('redraw by touchmove');
     redraw(touchMouse);
   },
   false,
@@ -79,10 +84,9 @@ function redraw(mouse) {
     return;
   }
 
-  console.log(`redraw by ${checkbox.checked}`);
-
   can.width = can.width;
   ctx.drawImage(img, 0, 0, 1920, 1080);
+  //ctx.drawImage(img, 0, 0, 900, 400);
   ctx.beginPath();
   ctx.rect(0, 0, can.width, can.height);
 
@@ -134,11 +138,6 @@ window.addEventListener("resize", function () {
   init(selectedPhoto, true);
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  init(0);
-});
-
-
 checkbox.addEventListener('sl-change', event => {
   if (event.target.checked) {
     activeText.innerHTML = "aan";
@@ -173,4 +172,12 @@ menu.addEventListener('sl-select', event => {
     currentPhoto.innerHTML = "Japan";
   }
 
+});
+
+
+init(0);
+
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM loaded and ready to go!");
+  init(0);
 });
