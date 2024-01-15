@@ -277,8 +277,12 @@ footer{
 
 @media (max-width: 768px) {
   .container_menu{
-    flex-direction:column;
+    flex-direction:column-reverse;
     gap:1rem;
     margin-top:1rem;
+  }
+
+  .chevron_container{
+    margin-top:-200px;
   }
 }
