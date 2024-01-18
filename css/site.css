@@ -262,11 +262,41 @@ footer{
   padding-bottom:2rem;
 }
 
+main{
+  scroll-snap-type: y mandatory;
+}
+
+section{
+  scroll-snap-align: start;
+}
+
 .gum{
   color: pink;
   text-decoration: none;
   cursor:pointer;
   transition: all 1s ease-in-out;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.image_gallery{
+  max-width:84rem;
+}
+
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
 }
 
 .gum:hover{
@@ -284,5 +314,25 @@ footer{
 
   .chevron_container{
     margin-top:-200px;
+  }
+}
+
+
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
   }
 }
