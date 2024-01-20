@@ -17,8 +17,16 @@
 
         <div class="kijkgat_controls">
 
-          <div class="kijkgat">Kijkgat: <span id="activeText">aan</span></div>
-          <sl-switch checked style="--width: 80px; --height: 40px; --thumb-size: 36px;"></sl-switch>
+          <div class="left_controls">
+            <div class="kijkgat">Kijkgat: <span id="activeText">aan</span></div>
+            <sl-switch checked style="--width: 80px; --height: 40px; --thumb-size: 36px;"></sl-switch>
+          </div>
+
+          <div class="center_controls">
+            <div class="chevvy">
+              <sl-icon-button name="chevron-double-down" id="scrollDown" label="down"></sl-icon-button>
+            </div>
+          </div>
 
           <div class="slider_controls">
             <sl-icon-button name="chevron-left" class="kijkgat_button_round" id="prevButton"
@@ -29,18 +37,13 @@
           </div>
 
 
-          <div class="chevron_container">
-            <div class="chevvy">
-              <sl-icon-button name="chevron-double-down" id="scrollDown" label="down"></sl-icon-button>
-            </div>
-          </div>
         </div>
 
       </section>
 
       <section class="3D">
         <div class="align-centre-flex">
-
+          <img class="centre_image" src="assets/images/3dwebsite_crop.gif" alt="3d kijkgat website" />
         </div>
 
         <div class="kijkgat_brand align-centre-flex">
@@ -119,6 +122,11 @@
           <button class="button is-checked kijkgat" data-filter=".product">Product</button>
           <button class="button kijkgat" data-filter=".dienst">Dienst</button>
           <button class="button kijkgat" data-filter=".gvdw">GVDW</button>
+        </div>
+
+
+        <div class="mx-auto text_for_products">
+          <p>Geïnteresseerd in een Kijkgat product op maat? Neem <a href="#footer">contact</a> met ons op!</p>
         </div>
 
         <div class="grid">
@@ -201,30 +209,47 @@
 
       </section>
 
-      <section id="contact_text" class="mx-auto">
-        <p>Kijkgat wordt op verschillende manier gebruikt. <br> Neem contact met ons op voor mogelijkheden voor een
-          Kijkgat
-          product op
-          maat.</p>
-        <br>
-        <h2 id="hidden-text" class="hidden">Kiekeboe, <a href="mailto:kijkgat@outlook.com">mail ons!</a></h2>
-      </section>
 
       <section id="contact">
         <button class="giant-circle-button link" id="activateCamera">
-          <sl-icon-button name="hand-index" label="touch" style="font-size: 4rem; color: #FFFDF4;"></sl-icon-button>
+          Ik durf wel wat
         </button>
         <div class="align-centre-flex">
           <div id="camera-container">
             <video width="250" height="250" id="camera-view" autoplay playsinline></video>
           </div>
         </div>
-
       </section>
 
-      <footer>
-        <p>Online gezet door <a class="gum" target="_blank" href="https://potloodgum.com">Potloodgum</a></p>
+      <div class="context_text mx-auto">
+        <span id="cta_text">Neem contact met ons op.</span>
+        <img id="arrow" src="assets/images/arrow.png" alt="arrow" />
+      </div>
+
+      <footer id="footer">
+
+        <div class="left_footer">
+          <div class="social_icons">
+            <sl-icon class="social_icon" name="instagram"></sl-icon>
+            <sl-icon class="social_icon" name="linkedin"></sl-icon>
+          </div>
+
+          <div class="left_footer_text">
+            <div>mail@kijkgat.com</div>
+            <div>Allert: +31 6 20 77 68 86</div>
+            <div>Michelle: +31 6 31 23 31 09</div>
+          </div>
+        </div>
+
+        <div class="right_footer">
+          <img src="assets/images/allert-michelle.png" alt="allert sjabbens en michelle van der plaats" />
+          Kijkgat is een project door Michelle van der Plaats en Allert Sjabbens (2023).
+        </div>
       </footer>
+
+      <p class="last_text mx-auto">Online gezet door <a class="gum" target="_blank"
+          href="https://potloodgum.com">Potloodgum</a>
+      </p>
     </main>
     <script src="js/imagesloaded.js"></script>
     <script src="js/isotope.js"></script>

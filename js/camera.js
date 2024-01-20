@@ -1,12 +1,11 @@
 async function initCamera() {
   const button = document.getElementById("activateCamera");
   const container = document.getElementById("camera-container");
-  const text = document.getElementById("hidden-text");
 
-  if (button && container && text) {
+
+  if (button && container) {
     button.style.display = "none";
     container.style.display = "block";
-    text.style.display = "block";
   }
 
   try {

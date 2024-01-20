@@ -144,6 +144,7 @@ canvas img{
   padding-left:2rem;
   padding-right:2rem;
   gap:1rem;
+  width:20%;
 }
 
 .kijkgat_brand svg{
@@ -163,6 +164,22 @@ canvas img{
   position:absolute;
   bottom:10rem;
   width:100%;
+  display:flex;
+  align-items:center;
+  padding-left:8rem;
+  padding-right:8rem;
+  justify-content: space-between;
+}
+
+.left_controls{
+  width: 20%;
+}
+
+.center_controls{
+  width: 20%;
+  display:flex;
+  align-items:center;
+  justify-content: center;
 }
 
 .container_menu{
@@ -252,7 +269,17 @@ canvas img{
   flex-direction: row;
   justify-content: center;
   align-content: center;
-  height: 80vh;
+  margin-top: 12rem;
+}
+
+#cta_text{
+  position:absolute;
+  top:0;
+} 
+#arrow{
+  position:absolute;
+  right:-12px;
+  top:0;
 }
 
 #contact_text{
@@ -266,6 +293,69 @@ video{
   width:100%;
   height:100%;
   object-fit:cover;
+}
+
+.context_text{
+
+  max-width:30rem;
+  height:30vh;
+  position:relative;
+}
+
+#cta_text{
+  font-size:2rem;
+  font-weight:600;
+  top: 108px;
+  right: 20px;
+}
+
+.social_icons{
+  text-align:left;
+  padding-left:1rem;
+}
+
+.social_icon{
+  font-size:5rem;
+  margin-left:1rem;
+  font-weight:200;
+}
+
+.left_footer{
+  max-width:30rem;
+}
+
+.left_footer_text{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align: left;
+  padding-left:2rem;
+  padding-top:1rem;
+}
+
+.right_footer{
+  max-width:20rem;
+  display:flex;
+  flex-direction:column;
+}
+
+.right_footer img{
+  align-self:flex-end;
+  width:14rem;
+}
+
+
+.last_text{
+  max-width:30rem;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align: left;
+  padding-left:2rem;
+  padding-top:1rem;
+  gap:0.4rem;
+  padding-bottom:1rem;
 }
 
 .giant-circle-button {
@@ -284,12 +374,21 @@ video{
 	transition: 0.3s;
 	border: none;
   cursor:pointer;
+  text-align:center;
+  padding:1rem; 
+}
+
+.button{
+  cursor:pointer;
 }
 
 footer{
-  text-align:center;
-  padding-top:2rem;
-  padding-bottom:2rem;
+  padding-left:8rem;
+  padding-right:8rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  height: 20vh;
 }
 
 main{
@@ -354,16 +453,27 @@ section{
 }
 
 
+.centre_image{
+  max-width:80rem;
+}
+
+.text_for_products{
+  text-align:center;
+  padding-bottom:2rem;
+  padding-top:2rem;
+}
+
 
 @media (max-width: 768px) {
-  .container_menu{
-    flex-direction:column-reverse;
-    gap:1rem;
-    margin-top:1rem;
+  .left_controls{
+    display:none;
+  }
+  .center_controls{
+    width:100%;
   }
 
-  .chevron_container{
-    margin-top:-200px;
+  .slider_controls{
+    display:none;
   }
 }
 
