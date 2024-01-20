@@ -106,6 +106,14 @@ canvas img{
   height:610px;
 }
 
+.button-group{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:1rem;
+  margin-bottom:2rem;
+}
+
 .kijkgat{
   padding:1rem;
   border: 1px solid var(--off-black);
@@ -122,6 +130,11 @@ canvas img{
   text-align:center;
   font-size:2rem;
   border-radius:50%;
+}
+
+.button.is-checked{
+  background-color: var(--off-black);
+  color: var(--off-white);
 }
 
 .slider_controls{
@@ -331,6 +344,15 @@ section{
   width: 33.33%; /* for a 3-column layout */
   box-sizing: border-box;
 }
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 2rem;
+  padding:0.5rem;
+}
+
 
 
 @media (max-width: 768px) {
