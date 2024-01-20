@@ -16,22 +16,18 @@
         <canvas id="canvas"></canvas>
 
         <div class="kijkgat_controls">
-          <div class="container_menu">
-            <div class="kijkgat">Kijkgat: <span id="activeText">aan</span></div>
 
-            <sl-dropdown size="large">
-              <sl-button slot="trigger" caret>Huidige foto: <span id="currentPhoto">De Nachtwacht</span></sl-button>
-              <sl-menu size="large">
-                <sl-menu-item value="nachtwacht">Nachtwacht</sl-menu-item>
-                <sl-menu-item value="nature">Natuur</sl-menu-item>
-                <sl-menu-item value="japan">Japan</sl-menu-item>
-              </sl-menu>
-            </sl-dropdown>
+          <div class="kijkgat">Kijkgat: <span id="activeText">aan</span></div>
+          <sl-switch checked style="--width: 80px; --height: 40px; --thumb-size: 36px;"></sl-switch>
 
+          <div class="slider_controls">
+            <sl-icon-button name="chevron-left" class="kijkgat_button_round" id="prevButton"
+              label="left"></sl-icon-button>
+            <div class="kijkgat" id="sliderText">Foto 1/9</div>
+            <sl-icon-button class="kijkgat_button_round" name="chevron-right" id="nextButton"
+              label="left"></sl-icon-button>
           </div>
-          <div class="container_menu">
-            <sl-switch checked style="--width: 80px; --height: 40px; --thumb-size: 36px;"></sl-switch>
-          </div>
+
 
           <div class="chevron_container">
             <div class="chevvy">
@@ -118,23 +114,94 @@
       </section>
 
       <section class="mx-auto image_gallery">
-        <div class="row">
-          <div class="column">
-            <img src="assets/images/22.png">
-            <img src="assets/images/23.png">
+
+        <div id="filters" class="button-group">
+          <button class="button is-checked" data-filter=".product">Product</button>
+          <button class="button" data-filter=".dienst">Dienst</button>
+          <button class="button" data-filter=".gvdw">GVDW</button>
+        </div>
+
+        <div class="grid">
+          <div class="grid-item dienst">
+            <img src="assets/images/isotope/dienst_1.jpg" alt="kijkgat" />
           </div>
-          <div class="column">
-            <img src="assets/images/24.png">
+          <div class="grid-item dienst">
+            <img src="assets/images/isotope/dienst_2.jpg" alt="kijkgat" />
           </div>
-          <div class="column">
-            <img src="assets/images/25.png">
-            <img src="assets/images/26.png">
+          <div class="grid-item dienst">
+            <img src="assets/images/isotope/dienst_3.jpg" alt="kijkgat" />
           </div>
-          <div class="column">
-            <img src="assets/images/27.png">
-            <img src="assets/images/28.png">
+          <div class="grid-item dienst">
+            <img src="assets/images/isotope/dienst_4.jpg" alt="kijkgat" />
+          </div>
+          <div class="grid-item dienst">
+            <img src="assets/images/isotope/dienst_5.jpg" alt="kijkgat" />
+          </div>
+          <div class="grid-item dienst">
+            <img src="assets/images/isotope/dienst_6.jpg" alt="kijkgat" />
+          </div>
+          <div class="grid-item dienst">
+            <img src="assets/images/isotope/dienst_7.jpg" alt="kijkgat" />
+          </div>
+          <div class="grid-item product">
+            <img src="assets/images/isotope/product_1.jpg" alt="kijkgat" />
+          </div>
+          <div class="grid-item product">
+            <img src="assets/images/isotope/product_2.jpg" alt="kijkgat" />
+          </div>
+          <div class="grid-item product">
+            <img src="assets/images/isotope/product_3.jpg" alt="kijkgat" />
+          </div>
+          <div class="grid-item product">
+            <img src="assets/images/isotope/product_4.jpg" alt="kijkgat" />
+          </div>
+          <div class="grid-item product">
+            <img src="assets/images/isotope/product_5.jpg" alt="kijkgat" />
+          </div>
+          <div class="grid-item product">
+            <img src="assets/images/isotope/product_6.jpg" alt="kijkgat" />
+          </div>
+          <div class="grid-item product">
+            <img src="assets/images/isotope/product_7.jpg" alt="kijkgat" />
+          </div>
+          <div class="grid-item product">
+            <img src="assets/images/isotope/product_8.jpg" alt="kijkgat" />
+          </div>
+          <div class="grid-item product">
+            <img src="assets/images/isotope/product_9.jpg" alt="kijkgat" />
+          </div>
+          <div class="grid-item product">
+            <img src="assets/images/isotope/product_10.jpg" alt="kijkgat" />
+          </div>
+          <div class="grid-item gvdw">
+            <img src="assets/images/isotope/gvdw_1.png" alt="kijkgat" />
+          </div>
+          <div class="grid-item gvdw">
+            <img src="assets/images/isotope/gvdw_2.png" alt="kijkgat" />
+          </div>
+          <div class="grid-item gvdw">
+            <img src="assets/images/isotope/gvdw_3.png" alt="kijkgat" />
+          </div>
+          <div class="grid-item gvdw">
+            <img src="assets/images/isotope/gvdw_4.png" alt="kijkgat" />
+          </div>
+          <div class="grid-item gvdw">
+            <img src="assets/images/isotope/gvdw_5.png" alt="kijkgat" />
+          </div>
+          <div class="grid-item gvdw">
+            <img src="assets/images/isotope/gvdw_6.png" alt="kijkgat" />
+          </div>
+          <div class="grid-item gvdw">
+            <img src="assets/images/isotope/gvdw_7.png" alt="kijkgat" />
+          </div>
+          <div class="grid-item gvdw">
+            <img src="assets/images/isotope/gvdw_8.png" alt="kijkgat" />
+          </div>
+          <div class="grid-item gvdw">
+            <img src="assets/images/isotope/gvdw_9.png" alt="kijkgat" />
           </div>
         </div>
+
       </section>
 
       <section id="contact_text" class="mx-auto">
@@ -162,8 +229,9 @@
         <p>Online gezet door <a class="gum" target="_blank" href="https://potloodgum.com">Potloodgum</a></p>
       </footer>
     </main>
+    <script src="js/imagesloaded.js"></script>
+    <script src="js/isotope.js"></script>
 
-    <script src="js/site.js"></script>
     <script src="js/canvas.js"></script>
     <script src="js/camera.js"></script>
     <script src="js/TextLoop.js"></script>
@@ -171,7 +239,7 @@
     <script type="module"
       src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace-autoloader.js"></script>
 
-
+    <script src="js/site.js"></script>
   </body>
 
 </html>

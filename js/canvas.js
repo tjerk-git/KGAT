@@ -3,13 +3,51 @@ const can = document.getElementById("canvas");
 const ctx = can.getContext("2d");
 const activeText = document.getElementById('activeText');
 const checkbox = document.querySelector('sl-switch');
-const menu = document.querySelector('sl-menu');
 const cursor = document.querySelector(".cursor");
 const currentPhoto = document.querySelector("#currentPhoto");
+
+const previousButton = document.querySelector("#prevButton");
+const nextButton = document.querySelector("#nextButton");
 
 let selectedPhoto = 0;
 
 let img;
+
+
+const isUserUsingMobile = () => {
+  // User agent string method
+  let isMobile =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent,
+    );
+
+  // Screen resolution method
+  if (!isMobile) {
+    let screenWidth = window.screen.width;
+    let screenHeight = window.screen.height;
+    isMobile = screenWidth < 768 || screenHeight < 768;
+  }
+
+  // Touch events method
+  if (!isMobile) {
+    isMobile =
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0 ||
+      navigator.msMaxTouchPoints > 0;
+  }
+
+  // CSS media queries method
+  if (!isMobile) {
+    let bodyElement = document.getElementsByTagName("body")[0];
+    isMobile =
+      window
+        .getComputedStyle(bodyElement)
+        .getPropertyValue("content")
+        .indexOf("mobile") !== -1;
+  }
+
+  return isMobile;
+};
 
 function init(imageIndex = 0, force = false) {
   const canvasOverlay = document.querySelector("#canvas_container");
@@ -18,25 +56,45 @@ function init(imageIndex = 0, force = false) {
 
   // change the image randomly after 5 seconds choose from array of images
   img = new Image();
-  // array with 5 placekittens images
-  const images = [
-    "../assets/images/nachtwacht.jpg",
-    "../assets/images/nature.jpg",
-    "../assets/images/3.jpg",
-  ];
+
+  let images = [];
+  // if user is on mobile create a different images array
+
+  if (isUserUsingMobile()) {
+    images = [
+      "../assets/images/mobile/1.webp",
+      "../assets/images/mobile/2.webp",
+      "../assets/images/mobile/3.webp",
+      "../assets/images/mobile/4.webp",
+      "../assets/images/mobile/5.webp",
+      "../assets/images/mobile/6.webp",
+      "../assets/images/mobile/7.webp",
+      "../assets/images/mobile/8.webp",
+      "../assets/images/mobile/9.webp",
+    ];
+  } else {
+    images = [
+      "../assets/images/kijkgat/1.webp",
+      "../assets/images/kijkgat/2.webp",
+      "../assets/images/kijkgat/3.webp",
+      "../assets/images/kijkgat/4.webp",
+      "../assets/images/kijkgat/5.webp",
+      "../assets/images/kijkgat/6.webp",
+      "../assets/images/kijkgat/7.webp",
+      "../assets/images/kijkgat/8.webp",
+      "../assets/images/kijkgat/9.webp",
+    ];
+  }
 
   img.src = images[imageIndex];
 
   // Set canvas dimensions based on the window size
-
   can.width = canvasOverlayWidth;
   can.height = canvasOverlayHeight;
 
   // calculate the middle of the canvas
   let middleX = can.width / 2;
   let middleY = can.height / 2;
-
-  console.log(`middleX: ${middleX} middleY: ${middleY}`)
 
 
   if (force === true && checkbox.checked === false) {
@@ -151,28 +209,68 @@ checkbox.addEventListener('sl-change', event => {
 });
 
 
-menu.addEventListener('sl-select', event => {
+// menu.addEventListener('sl-select', event => {
 
-  checkbox.checked = true;
-  activeText.innerHTML = "aan";
-  can.style.cursor = "none";
+//   checkbox.checked = true;
+//   activeText.innerHTML = "aan";
+//   can.style.cursor = "none";
 
-  if (event.detail.item.value === "nachtwacht") {
-    init(0);
+//   if (event.detail.item.value === "nachtwacht") {
+//     init(0);
 
-    selectedPhoto = 0;
-    currentPhoto.innerHTML = "De Nachtwacht";
-  } else if (event.detail.item.value === "nature") {
-    init(1);
-    selectedPhoto = 1;
-    currentPhoto.innerHTML = "Natuur";
-  } else if (event.detail.item.value === "japan") {
-    init(2);
-    selectedPhoto = 2;
-    currentPhoto.innerHTML = "Japan";
+//     selectedPhoto = 0;
+//     currentPhoto.innerHTML = "De Nachtwacht";
+//   } else if (event.detail.item.value === "nature") {
+//     init(1);
+//     selectedPhoto = 1;
+//     currentPhoto.innerHTML = "Natuur";
+//   } else if (event.detail.item.value === "japan") {
+//     init(2);
+//     selectedPhoto = 2;
+//     currentPhoto.innerHTML = "Japan";
+//   }
+
+// });
+
+previousButton.addEventListener("click", function () {
+
+  console.log('previous button clicked');
+
+  if (selectedPhoto === 0) {
+    return;
   }
 
+  selectedPhoto--;
+
+  console.log(`selectedPhoto: ${selectedPhoto}`);
+  init(selectedPhoto);
+
+  changeSliderText();
 });
+
+nextButton.addEventListener("click", function () {
+
+  console.log('next button clicked');
+
+
+  // replace with tottal number of images
+  if (selectedPhoto === 8) {
+    return;
+  }
+
+  selectedPhoto++;
+
+  console.log(`selectedPhoto: ${selectedPhoto}`);
+
+  init(selectedPhoto);
+  changeSliderText();
+});
+
+function changeSliderText() {
+  const sliderText = document.querySelector('#sliderText');
+  const currentPhoto = selectedPhoto + 1;
+  sliderText.innerHTML = `Foto ${currentPhoto}/9`;
+}
 
 
 init(0);

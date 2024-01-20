@@ -84,7 +84,7 @@ img{
 }
 
 .canvas{
-  height:90vh;
+  height:100vh;
   position:relative;  
   margin-bottom: 10rem;
 }
@@ -116,6 +116,23 @@ canvas img{
   background-color: var(--off-white);
 }
 
+.kijkgat_button_round{
+  background-color: var(--off-white);
+  border: 1px solid var(--off-black);
+  text-align:center;
+  font-size:2rem;
+  border-radius:50%;
+}
+
+.slider_controls{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  padding-left:2rem;
+  padding-right:2rem;
+  gap:1rem;
+}
+
 .kijkgat_brand svg{
   width:500px;
   height:150px;
@@ -131,7 +148,7 @@ canvas img{
 
 .kijkgat_controls{
   position:absolute;
-  bottom:50px;
+  bottom:10rem;
   width:100%;
 }
 
@@ -304,6 +321,17 @@ section{
   transform: scale(1.1);
   text-decoration: underline;
 }
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-item {
+  width: 33.33%; /* for a 3-column layout */
+  box-sizing: border-box;
+}
+
 
 @media (max-width: 768px) {
   .container_menu{
