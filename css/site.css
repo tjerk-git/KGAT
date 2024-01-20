@@ -35,6 +35,7 @@
 html{
   font-size: 62.5%;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body{
@@ -218,6 +219,10 @@ canvas img{
   margin-bottom:12rem;
 }
 
+.loop-container{
+  overflow: hidden;
+}
+
 .whatis_container{
   max-width:64rem;
   display:flex;
@@ -380,6 +385,7 @@ video{
 
 .button{
   cursor:pointer;
+  color: var(--off-black);
 }
 
 footer{
@@ -474,25 +480,5 @@ section{
 
   .slider_controls{
     display:none;
-  }
-}
-
-
-
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .column {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
-  }
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
   }
 }
