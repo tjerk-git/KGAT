@@ -188,6 +188,7 @@ canvas img{
   display: flex;
   justify-content: center;
   flex-direction: column;
+  z-index: 999;
 }
 
 .mobile_slider{
