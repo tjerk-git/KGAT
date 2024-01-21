@@ -18,22 +18,34 @@
         <div class="kijkgat_controls">
 
           <div class="left_controls">
-            <div class="kijkgat">Kijkgat: <span id="activeText">aan</span></div>
+            <div class="kijkgat">Kijkgat: <span class="activeText">aan</span></div>
             <sl-switch checked style="--width: 80px; --height: 40px; --thumb-size: 36px;"></sl-switch>
           </div>
 
           <div class="center_controls">
             <div class="chevvy">
-              <sl-icon-button name="chevron-double-down" id="scrollDown" label="down"></sl-icon-button>
+              <a href="#brand"><sl-icon-button name="chevron-double-down" class="scrollDown"
+                  label="down"></sl-icon-button></a>
             </div>
           </div>
 
           <div class="slider_controls">
-            <sl-icon-button name="chevron-left" class="kijkgat_button_round" id="prevButton"
-              label="left"></sl-icon-button>
-            <div class="kijkgat" id="sliderText">Foto 1/9</div>
-            <sl-icon-button class="kijkgat_button_round" name="chevron-right" id="nextButton"
-              label="left"></sl-icon-button>
+            <sl-icon-button name="chevron-left" class="kijkgat_button_round prevButton" label="left"></sl-icon-button>
+            <div class="kijkgat sliderText">Foto 1/9</div>
+            <sl-icon-button class="kijkgat_button_round nextButton" name="chevron-right" label="left"></sl-icon-button>
+          </div>
+
+        </div>
+
+        <div class="mobile_controls">
+          <div class="mobile_slider">
+            <div class="kijkgat sliderText">Foto 1/9</div>
+            <sl-icon-button name="chevron-left" class="kijkgat_button_round prevButton" label="left"></sl-icon-button>
+            <sl-icon-button class="kijkgat_button_round nextButton" name="chevron-right" label="left"></sl-icon-button>
+          </div>
+          <div class="mobile_kijkgat">
+            <div class="kijkgat">Kijkgat: <span class="activeText">aan</span></div>
+            <sl-switch checked style="--width: 80px; --height: 40px; --thumb-size: 36px;"></sl-switch>
           </div>
 
 
@@ -46,7 +58,7 @@
           <img class="centre_image" src="assets/images/3dwebsite_crop.gif" alt="3d kijkgat website" />
         </div>
 
-        <div class="kijkgat_brand align-centre-flex">
+        <div class="kijkgat_brand align-centre-flex" id="brand">
           <svg width="970" height="192" viewBox="0 0 970 192" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_227_20)">
               <path
@@ -83,7 +95,7 @@
         </div>
       </section>
 
-      <div class="hero-section">
+      <!-- <div class="hero-section">
         <div class="loop-container link">
           <div class="item">
             Kijkgat - Kykgat - Guckloch - Trou de regard - Mirilla Spioncino -
@@ -97,7 +109,7 @@
           </div>
         </div>
       </div>
-      </section>
+      </section> -->
 
       <section id="whatis">
         <div class="whatis_container">
@@ -129,7 +141,7 @@
           <p>Geïnteresseerd in een Kijkgat product op maat? Neem <a href="#footer">contact</a> met ons op!</p>
         </div>
 
-        <div class="grid">
+        <div class="grid" id="gallery">
           <div class="grid-item dienst">
             <img src="assets/images/isotope/dienst_1.jpg" alt="kijkgat" />
           </div>
@@ -230,12 +242,14 @@
 
         <div class="left_footer">
           <div class="social_icons">
-            <sl-icon class="social_icon" name="instagram"></sl-icon>
-            <sl-icon class="social_icon" name="linkedin"></sl-icon>
+            <a href="https://www.instagram.com/kijkgaten/" target="_blank"><sl-icon class="social_icon"
+                name="instagram"></sl-icon></a>
+            <a href="https://www.linkedin.com/company/kijkgat/"><sl-icon class="social_icon"
+                name="linkedin"></sl-icon></a>
           </div>
 
           <div class="left_footer_text">
-            <div>mail@kijkgat.com</div>
+            <div><a href="mailto:mail@kijkgat.com">mail@kijkgat.com</a></div>
             <div>Allert: +31 6 20 77 68 86</div>
             <div>Michelle: +31 6 31 23 31 09</div>
           </div>

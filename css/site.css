@@ -20,6 +20,11 @@
   padding: 0;
 }
 
+a{
+  text-decoration: none;
+  color: var(--off-black);
+}
+
 :root{
   --off-black: #0B0B0B;
   --off-white: #FFFDF4;
@@ -42,7 +47,6 @@ body{
   font-size: 1.6rem;
   background-color: var(--off-white);
   color: var(--off-black);
-  scroll-behavior: smooth;
   font-family: 'Inter', sans-serif;
 }
 
@@ -148,6 +152,11 @@ canvas img{
   width:20%;
 }
 
+.kijkgat_brand{
+  padding-left:2rem;
+  padding-right:2rem;
+}
+
 .kijkgat_brand svg{
   width:500px;
   height:150px;
@@ -170,6 +179,22 @@ canvas img{
   padding-left:8rem;
   padding-right:8rem;
   justify-content: space-between;
+}
+
+.mobile_controls{
+  position:absolute;
+  bottom:18rem;
+  align-items:center;
+  left:14rem;
+  display:none;
+  width:100%;
+}
+
+.mobile_slider{
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
+  margin-bottom:1rem;
 }
 
 .left_controls{
@@ -220,7 +245,7 @@ canvas img{
 }
 
 .loop-container{
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .whatis_container{
@@ -420,6 +445,8 @@ section{
 
 .image_gallery{
   max-width:84rem;
+  padding-left:1rem;
+  padding-right:1rem;
 }
 
 .column {
@@ -471,14 +498,41 @@ section{
 
 
 @media (max-width: 768px) {
-  .left_controls{
-    display:none;
-  }
+
   .center_controls{
     width:100%;
   }
 
-  .slider_controls{
-    display:none;
+  .mobile_kijkgat{
+    margin-bottom:4rem;
+  }
+
+  footer{
+    flex-direction:column;
+    padding-left:0rem;
+    padding-right:0rem;
+  }
+
+  .left_footer{
+    width:100%;
+    max-width:100%;
+    align-self:center;
+    padding-bottom:4rem;
+  }
+
+  .right_footer{
+    width:100%;
+    padding-left:2rem;
+    padding-right:2rem; 
+    max-width:100%;
+    align-self:center;
+    flex-direction:row;
+  }
+
+  .last_text{
+    padding-top:10rem;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
   }
 }

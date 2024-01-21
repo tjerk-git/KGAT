@@ -1,16 +1,9 @@
 
 const can = document.getElementById("canvas");
 const ctx = can.getContext("2d");
-const activeText = document.getElementById('activeText');
 const checkbox = document.querySelector('sl-switch');
-const cursor = document.querySelector(".cursor");
-const currentPhoto = document.querySelector("#currentPhoto");
-
-const previousButton = document.querySelector("#prevButton");
-const nextButton = document.querySelector("#nextButton");
 
 let selectedPhoto = 0;
-
 let img;
 
 
@@ -48,6 +41,72 @@ const isUserUsingMobile = () => {
 
   return isMobile;
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM loaded and ready to go!");
+
+  if (isUserUsingMobile()) {
+    let kijkgat_controls = document.querySelector('.kijkgat_controls');
+
+    // remove kijkgat_controls from DOM
+    kijkgat_controls.remove();
+  } else {
+    let kijkgat_controls_mobile = document.querySelector('.mobile_controls');
+    // remove kijkgat_controls from DOM
+    kijkgat_controls_mobile.remove();
+  }
+
+  init(0);
+
+  const activeText = document.querySelector('.activeText');
+
+  const previousButton = document.querySelector(".prevButton");
+  const nextButton = document.querySelector(".nextButton");
+
+  function changeSliderText() {
+    const sliderText = document.querySelector('.sliderText');
+    const currentPhoto = selectedPhoto + 1;
+    sliderText.innerHTML = `Foto ${currentPhoto}/9`;
+  }
+
+  checkbox.addEventListener('sl-change', event => {
+    if (event.target.checked) {
+      activeText.innerHTML = "aan";
+      can.style.cursor = "none";
+      init(selectedPhoto);
+    } else {
+      lightsOn();
+      activeText.innerHTML = "uit";
+      can.style.cursor = "pointer";
+    }
+  });
+
+
+  previousButton.addEventListener("click", function () {
+    if (selectedPhoto === 0) {
+      return;
+    }
+    selectedPhoto--;
+    init(selectedPhoto);
+    changeSliderText();
+  });
+
+  nextButton.addEventListener("click", function () {
+    console.log('next button clicked');
+    // replace with tottal number of images
+    if (selectedPhoto === 8) {
+      return;
+    }
+    selectedPhoto++;
+    init(selectedPhoto);
+    changeSliderText();
+  });
+
+
+
+});
+
+
 
 function init(imageIndex = 0, force = false) {
   const canvasOverlay = document.querySelector("#canvas_container");
@@ -196,86 +255,4 @@ window.addEventListener("resize", function () {
   init(selectedPhoto, true);
 });
 
-checkbox.addEventListener('sl-change', event => {
-  if (event.target.checked) {
-    activeText.innerHTML = "aan";
-    can.style.cursor = "none";
-    init(selectedPhoto);
-  } else {
-    lightsOn();
-    activeText.innerHTML = "uit";
-    can.style.cursor = "pointer";
-  }
-});
 
-
-// menu.addEventListener('sl-select', event => {
-
-//   checkbox.checked = true;
-//   activeText.innerHTML = "aan";
-//   can.style.cursor = "none";
-
-//   if (event.detail.item.value === "nachtwacht") {
-//     init(0);
-
-//     selectedPhoto = 0;
-//     currentPhoto.innerHTML = "De Nachtwacht";
-//   } else if (event.detail.item.value === "nature") {
-//     init(1);
-//     selectedPhoto = 1;
-//     currentPhoto.innerHTML = "Natuur";
-//   } else if (event.detail.item.value === "japan") {
-//     init(2);
-//     selectedPhoto = 2;
-//     currentPhoto.innerHTML = "Japan";
-//   }
-
-// });
-
-previousButton.addEventListener("click", function () {
-
-  console.log('previous button clicked');
-
-  if (selectedPhoto === 0) {
-    return;
-  }
-
-  selectedPhoto--;
-
-  console.log(`selectedPhoto: ${selectedPhoto}`);
-  init(selectedPhoto);
-
-  changeSliderText();
-});
-
-nextButton.addEventListener("click", function () {
-
-  console.log('next button clicked');
-
-
-  // replace with tottal number of images
-  if (selectedPhoto === 8) {
-    return;
-  }
-
-  selectedPhoto++;
-
-  console.log(`selectedPhoto: ${selectedPhoto}`);
-
-  init(selectedPhoto);
-  changeSliderText();
-});
-
-function changeSliderText() {
-  const sliderText = document.querySelector('#sliderText');
-  const currentPhoto = selectedPhoto + 1;
-  sliderText.innerHTML = `Foto ${currentPhoto}/9`;
-}
-
-
-init(0);
-
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("DOM loaded and ready to go!");
-  init(0);
-});
