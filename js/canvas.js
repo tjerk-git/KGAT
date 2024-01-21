@@ -7,6 +7,13 @@ const activeText = document.querySelector('.activeText');
 const previousButton = document.querySelector(".prevButton");
 const nextButton = document.querySelector(".nextButton");
 
+// let middleX = Math.round(can.width);
+// let middleY = Math.round(can.height / 2);
+
+let middleX = 190;
+let middleY = 370;
+
+// calculate the middle of the canvas
 
 let selectedPhoto = 0;
 let img;
@@ -134,16 +141,16 @@ function init(imageIndex = 0, force = false) {
   can.width = canvasOverlayWidth;
   can.height = canvasOverlayHeight;
 
-  // calculate the middle of the canvas
-  let middleX = can.width / 2;
-  let middleY = can.height / 2;
-
 
   if (force === true && checkbox.checked === false) {
     lightsOn();
     return;
   } else {
     console.log('redraw by init');
+
+    console.log('middleX', middleX);
+    console.log('middleY', middleY);
+
     redraw({ x: middleX, y: middleY });
   }
 }
@@ -195,6 +202,9 @@ function redraw(mouse) {
 
   ctx.arc(mouse.x, mouse.y, cursorWidth, 0, Math.PI * 2, true);
 
+  console.log('mouse.x', mouse.x);
+  console.log('mouse.y', mouse.y);
+
   ctx.clip();
   ctx.fillStyle = "#FFFDF4";
 
@@ -232,6 +242,11 @@ function getMouse(e, canvas) {
     y: my,
   };
 }
+
+// on load
+window.addEventListener("load", function () {
+  redraw({ x: middleX, y: middleY });
+});
 
 // on window resize, update the canvas size
 window.addEventListener("resize", function () {
