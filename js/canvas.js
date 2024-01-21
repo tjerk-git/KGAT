@@ -1,7 +1,7 @@
 
 const can = document.getElementById("canvas");
 const ctx = can.getContext("2d");
-const checkbox = document.querySelector('sl-switch');
+let checkbox = document.querySelector('sl-switch');
 
 let selectedPhoto = 0;
 let img;
@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // remove kijkgat_controls from DOM
     kijkgat_controls.remove();
+    checkbox = document.querySelector('sl-switch');
   } else {
     let kijkgat_controls_mobile = document.querySelector('.mobile_controls');
     // remove kijkgat_controls from DOM

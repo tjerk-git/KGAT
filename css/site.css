@@ -182,12 +182,11 @@ canvas img{
 }
 
 .mobile_controls{
-  position:absolute;
-  bottom:18rem;
-  align-items:center;
-  left:14rem;
-  display:none;
-  width:100%;
+  align-items: center;
+  margin-top: -100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .mobile_slider{
@@ -508,7 +507,7 @@ section{
   }
 
   .mobile_kijkgat{
-    margin-bottom:4rem;
+    margin-bottom:2rem;
   }
 
   footer{
