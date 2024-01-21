@@ -40,6 +40,9 @@ a{
 html{
   font-size: 62.5%;
   scroll-behavior: smooth;
+}
+
+html, body{
   overflow-x: hidden;
 }
 
@@ -72,17 +75,6 @@ img{
     margin-left: auto;
     margin-right: auto;
 }
-
-/* .cursor {
-	position: fixed;
-	width: 4rem;
-	height: 4rem;
-	border-radius: 50%;
-	background-color: black;
-	pointer-events: none;
-	z-index: 999;
-	transition: transform 0.2s;
-} */
 
 .hidden{
   display:none;
