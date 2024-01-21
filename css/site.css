@@ -89,7 +89,7 @@ img{
 }
 
 .canvas{
-  height:100dvh;
+  height:80dvh;
   min-height: -webkit-fill-available;
   position:relative;  
   margin-bottom: 10rem;
