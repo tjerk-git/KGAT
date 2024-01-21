@@ -237,6 +237,8 @@ canvas img{
 	font-size:2rem;
 	margin-top:12rem;
   margin-bottom:12rem;
+  position:relative;
+  height:10vh;
 }
 
 .loop-container{
@@ -569,3 +571,39 @@ section{
     width:100%;
   }
 }
+
+.gi-ticker {
+    overflow: hidden;
+    position: relative;
+    height: 90px;
+  }
+
+  .gi-ticker__text {
+      display: flex;
+      white-space: nowrap;
+      box-sizing: content-box;
+      position: absolute;
+      left: 0;
+      top: 0;
+      align-items: center;
+      height: 100%;
+      animation: ticker-anim 50s linear infinite;
+      gap: 2vw;
+  }
+
+  .gi-ticker__text-element {
+    display: flex;
+    align-items: center;
+  }
+
+
+  @keyframes ticker-anim {
+    0% {
+      visibility: visible;
+      transform: translateX(100vw);
+    }
+
+    50%, 100% {
+      transform: translateX(-100%);
+    }
+  }
