@@ -498,6 +498,29 @@ section{
 
 @media (max-width: 768px) {
 
+  .canvas{
+    height:76dvh;
+  }
+
+  .kijkgat_controls{
+    bottom:-10rem;
+    flex-direction:column;
+  }
+
+  .left_controls{
+    width:100%;
+    max-width:100%;
+    align-self:center;
+  }
+  
+  .slider_controls{
+    width:100%;
+    max-width:100%;
+    align-self:center;
+    padding-left:0rem;
+    padding-right:0rem;
+    justify-content:center;
+  }
 
   .center_controls{
     width:100%;

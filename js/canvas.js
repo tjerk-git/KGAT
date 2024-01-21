@@ -1,7 +1,12 @@
 
 const can = document.getElementById("canvas");
 const ctx = can.getContext("2d");
-let checkbox = document.querySelector('sl-switch');
+const checkbox = document.querySelector('sl-switch');
+const activeText = document.querySelector('.activeText');
+
+const previousButton = document.querySelector(".prevButton");
+const nextButton = document.querySelector(".nextButton");
+
 
 let selectedPhoto = 0;
 let img;
@@ -42,71 +47,48 @@ const isUserUsingMobile = () => {
   return isMobile;
 };
 
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("DOM loaded and ready to go!");
 
-  if (isUserUsingMobile()) {
-    let kijkgat_controls = document.querySelector('.kijkgat_controls');
 
-    // remove kijkgat_controls from DOM
-    kijkgat_controls.remove();
-    checkbox = document.querySelector('sl-switch');
+init(0);
+
+function changeSliderText() {
+  const sliderText = document.querySelector('.sliderText');
+  const currentPhoto = selectedPhoto + 1;
+  sliderText.innerHTML = `Foto ${currentPhoto}/9`;
+}
+
+checkbox.addEventListener('sl-change', event => {
+  if (event.target.checked) {
+    activeText.innerHTML = "aan";
+    can.style.cursor = "none";
+    init(selectedPhoto);
   } else {
-    let kijkgat_controls_mobile = document.querySelector('.mobile_controls');
-    // remove kijkgat_controls from DOM
-    kijkgat_controls_mobile.remove();
+    lightsOn();
+    activeText.innerHTML = "uit";
+    can.style.cursor = "pointer";
   }
-
-  init(0);
-
-  const activeText = document.querySelector('.activeText');
-
-  const previousButton = document.querySelector(".prevButton");
-  const nextButton = document.querySelector(".nextButton");
-
-  function changeSliderText() {
-    const sliderText = document.querySelector('.sliderText');
-    const currentPhoto = selectedPhoto + 1;
-    sliderText.innerHTML = `Foto ${currentPhoto}/9`;
-  }
-
-  checkbox.addEventListener('sl-change', event => {
-    if (event.target.checked) {
-      activeText.innerHTML = "aan";
-      can.style.cursor = "none";
-      init(selectedPhoto);
-    } else {
-      lightsOn();
-      activeText.innerHTML = "uit";
-      can.style.cursor = "pointer";
-    }
-  });
-
-
-  previousButton.addEventListener("click", function () {
-    if (selectedPhoto === 0) {
-      return;
-    }
-    selectedPhoto--;
-    init(selectedPhoto);
-    changeSliderText();
-  });
-
-  nextButton.addEventListener("click", function () {
-    console.log('next button clicked');
-    // replace with tottal number of images
-    if (selectedPhoto === 8) {
-      return;
-    }
-    selectedPhoto++;
-    init(selectedPhoto);
-    changeSliderText();
-  });
-
-
-
 });
 
+
+previousButton.addEventListener("click", function () {
+  if (selectedPhoto === 0) {
+    return;
+  }
+  selectedPhoto--;
+  init(selectedPhoto);
+  changeSliderText();
+});
+
+nextButton.addEventListener("click", function () {
+  console.log('next button clicked');
+  // replace with tottal number of images
+  if (selectedPhoto === 8) {
+    return;
+  }
+  selectedPhoto++;
+  init(selectedPhoto);
+  changeSliderText();
+});
 
 
 function init(imageIndex = 0, force = false) {
