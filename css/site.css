@@ -491,12 +491,12 @@ section{
 @media (max-width: 768px) {
 
   .canvas{
-    height:76dvh;
+    height:100dvh;
     width:100dvw;
   }
 
   .kijkgat_controls{
-    bottom:-10rem;
+    bottom:2rem;
     flex-direction:column;
   }
 
