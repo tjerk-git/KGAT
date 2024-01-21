@@ -89,7 +89,7 @@ img{
 }
 
 .canvas{
-  height:100vh;
+  height:100dvh;
   min-height: -webkit-fill-available;
   position:relative;  
   margin-bottom: 10rem;
@@ -234,7 +234,7 @@ canvas img{
 }
 
 .3D{
-  height:100vh;
+  height:100dvh;
 }
 
 .hero-section {
@@ -328,7 +328,7 @@ video{
 .context_text{
 
   max-width:30rem;
-  height:30vh;
+  height:30dvh;
   position:relative;
 }
 
@@ -419,7 +419,7 @@ footer{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  height: 20vh;
+  height: 20dvh;
 }
 
 main{
