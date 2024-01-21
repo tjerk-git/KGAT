@@ -499,6 +499,10 @@ section{
 
 @media (max-width: 768px) {
 
+  .canvas{
+    height:90vh;
+  }
+
   .center_controls{
     width:100%;
   }
