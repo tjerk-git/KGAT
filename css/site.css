@@ -587,8 +587,8 @@ section{
       top: 0;
       align-items: center;
       height: 100%;
-      animation: ticker-anim 50s linear infinite;
-      gap: 2vw;
+      animation: ticker-anim 80s linear infinite;
+      gap: 1vw;
   }
 
   .gi-ticker__text-element {
