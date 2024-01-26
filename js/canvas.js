@@ -83,6 +83,8 @@ previousButton.addEventListener("click", function () {
   }
   selectedPhoto--;
   init(selectedPhoto);
+
+  checkbox.checked = true;
   changeSliderText();
 });
 
@@ -94,6 +96,7 @@ nextButton.addEventListener("click", function () {
   }
   selectedPhoto++;
   init(selectedPhoto);
+  checkbox.checked = true;
   changeSliderText();
 });
 
