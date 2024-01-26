@@ -612,26 +612,60 @@ section {
   height: 90px;
 }
 
-.gi-ticker__text {
-  display: flex;
-  white-space: nowrap;
-  box-sizing: content-box;
+
+.marquee {
+  height: 35px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 8px 0 4px 0;
+}
+
+
+/* would need to be adjusted depending on time */
+.marquee .marqueeone {
+  animation: marquee 25s linear infinite
+}
+
+.marquee .marqueetwo {
+  animation: marquee 25s linear 5s infinite
+}
+
+.marquee .marqueethree {
+  animation: marquee 25s linear 10s infinite
+}
+
+.marquee .marqueefour {
+  animation: marquee 25s linear 15s infinite
+}
+
+/* even out the elements */
+.marquee div {
   position: absolute;
-  left: 0;
-  top: 0;
-  align-items: center;
-  height: 100%;
-  animation: ticker-anim 66s linear infinite;
-  gap: 1vw;
-}
-
-.gi-ticker__text:last-of-type {
-  animation-delay: -33s;
-}
-
-.gi-ticker__text-element {
+  width: 100%;
+  left: 100%;
+  height: 40px;
   display: flex;
-  align-items: center;
+  gap: 1rem;
+}
+
+.marquee:hover div {
+  animation-play-state: paused;
+}
+
+/* add delay at the end of animation so you dont start while another div is going */
+@keyframes marquee {
+  0% {
+    left: 100%;
+  }
+
+  50% {
+    left: -100%;
+  }
+
+  100% {
+    left: -100%
+  }
 }
 
 
