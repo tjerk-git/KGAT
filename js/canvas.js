@@ -198,7 +198,7 @@ function redraw(mouse) {
   ctx.rect(0, 0, can.width, can.height);
 
   // calculate a width based on the current window size
-  var cursorWidth = 69;
+  var cursorWidth = 88;
 
   ctx.arc(mouse.x, mouse.y, cursorWidth, 0, Math.PI * 2, true);
 
