@@ -612,60 +612,22 @@ section {
   height: 90px;
 }
 
-
-.marquee {
-  height: 35px;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  padding: 8px 0 4px 0;
-}
-
-
-/* would need to be adjusted depending on time */
-.marquee .marqueeone {
-  animation: marquee 25s linear infinite
-}
-
-.marquee .marqueetwo {
-  animation: marquee 25s linear 5s infinite
-}
-
-.marquee .marqueethree {
-  animation: marquee 25s linear 10s infinite
-}
-
-.marquee .marqueefour {
-  animation: marquee 25s linear 15s infinite
-}
-
-/* even out the elements */
-.marquee div {
-  position: absolute;
-  width: 100%;
-  left: 100%;
-  height: 40px;
+.gi-ticker__text {
   display: flex;
-  gap: 1rem;
+  white-space: nowrap;
+  box-sizing: content-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  align-items: center;
+  height: 100%;
+  animation: ticker-anim 66s linear infinite;
+  gap: 1vw;
 }
 
-.marquee:hover div {
-  animation-play-state: paused;
-}
-
-/* add delay at the end of animation so you dont start while another div is going */
-@keyframes marquee {
-  0% {
-    left: 100%;
-  }
-
-  50% {
-    left: -100%;
-  }
-
-  100% {
-    left: -100%
-  }
+.gi-ticker__text-element {
+  display: flex;
+  align-items: center;
 }
 
 
