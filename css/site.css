@@ -304,7 +304,7 @@ canvas img {
   grid-auto-flow: column;
   grid-gap: 2rem;
   grid-template-rows: 50% 50%;
-  max-width: 64rem;
+  max-width: 96rem;
 }
 
 #camera-container {
