@@ -37,11 +37,11 @@ const filterText = document.querySelector('#filter-text');
 
 
 // loop through through all p tags inside filterText
-for (const p of filterText.querySelectorAll('p')) {
+for (const h2 of filterText.querySelectorAll('h2')) {
   // if p tag has a data-filter attribute
   if (p.hasAttribute('data-filter')) {
     // if p tag's data-filter attribute matches the filterValue
-    if (p.getAttribute('data-filter') === '.product') {
+    if (p.getAttribute('data-filter') === '.kader') {
       // show p tag
       p.classList.remove('hidden');
     } else {
