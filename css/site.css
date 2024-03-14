@@ -636,8 +636,8 @@ section {
   line-height: 1.2;
   margin-bottom: 1.6rem;
   align-items: center;
-  text-align: center;
-  width: 60%
+  text-align: left;
+  max-width: 69rem;
 }
   
 
