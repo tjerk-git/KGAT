@@ -1,14 +1,14 @@
 @font-face {
-  font-family: 'Inter';
-  src: url('../assets/fonts/Inter.ttf') format('truetype');
+  font-family: 'archivo';
+  src: url('../assets/fonts/Archivo-VariableFont_wdth\,wght.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('../assets/fonts/Inter.ttf') format('truetype');
+  font-family: 'archivo';
+  src: url('../assets/fonts/Archivo-VariableFont_wdth\,wght.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -51,7 +51,7 @@ body {
   font-size: 1.6rem;
   background-color: var(--off-white);
   color: var(--off-black);
-  font-family: 'Inter', sans-serif;
+  font-family: 'archivo', sans-serif;
 }
 
 h1 {
