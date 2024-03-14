@@ -21,7 +21,7 @@ const grid = document.querySelector('.grid');
 var iso = new Isotope(grid, {
   itemSelector: '.grid-item',
   layoutMode: 'masonry',
-  filter: '.product'
+  filter: '.kader'
 });
 
 imagesLoaded(grid).on('progress', function () {
