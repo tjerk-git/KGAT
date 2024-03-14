@@ -635,8 +635,9 @@ section {
   font-weight: 300;
   line-height: 1.2;
   margin-bottom: 1.6rem;
-  align-items: right;
-  width: 60%
+  text-align: right;
+  align-item: centre;
+  width: 69%;
 }
   
 
