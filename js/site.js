@@ -41,7 +41,7 @@ for (const p of filterText.querySelectorAll('p')) {
   // if p tag has a data-filter attribute
   if (p.hasAttribute('data-filter')) {
     // if p tag's data-filter attribute matches the filterValue
-    if (p.getAttribute('data-filter') === '.product') {
+    if (p.getAttribute('data-filter') === '.kader') {
       // show p tag
       p.classList.remove('hidden');
     } else {
