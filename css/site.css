@@ -636,9 +636,6 @@ section {
   line-height: 1.2;
   margin-bottom: 1.6rem;
   text-align: left;
-  max-width: 64rem;
-  display: flex;
-  flex-direction: column;
 }
   
 
