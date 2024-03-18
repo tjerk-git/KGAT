@@ -575,8 +575,8 @@ section {
   }
 
   .button-group {
-    flex-direction: column;
-    align-items:flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .mobile_chevron {
