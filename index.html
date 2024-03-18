@@ -23,6 +23,18 @@
 
   <body>
     <main>
+      <section id="kijkgat_mobile">
+        <button class="giant-circle-button link" id="activateCamera">
+          <img src="assets/images/touch.png" alt="touch" />
+          Activeer Kijkgat
+        </button>
+        <div class="align-centre-flex">
+          <div id="camera-container">
+            <video width="250" height="250" id="camera-view" autoplay playsinline></video>
+          </div>
+        </div>
+      </section>
+
       <section class="canvas" id="canvas_container">
         <canvas id="canvas"></canvas>
 
@@ -57,7 +69,9 @@
 
       </section>
 
-            <section class="3D" id="spinning_plates">
+      <div class="gotta-keep-em-seperated"></div>
+
+      <section class="3D" id="spinning_plates">
         <div class="align-centre-flex">
           <img class="centre_image" src="assets/images/kijkgatpotloodgum.gif" alt="3d kijkgat website" />
         </div>
@@ -106,15 +120,16 @@
           <div class="kijkgat wordswitch hidden">Een kaartje met een gat</div>
         </div>
       </section>
-      
+
       <section id="whatis">
         <div class="whatis_container">
           <h1>
-            Zie het mooie in het alledaagse. Zie het bijzondere in het gewone. Fragmenteer en neem waar. Kijk door het gat en zie wat je nog niet zag.
+            Zie het mooie in het alledaagse. Zie het bijzondere in het gewone. Fragmenteer en neem waar. Kijk door het
+            gat en zie wat je nog niet zag.
           </h1>
         </div>
       </section>
-      
+
       <section class="mx-auto image_gallery">
 
         <div id="filters" class="button-group">
@@ -127,103 +142,103 @@
 
 
         <div class="mx-auto text_for_products" id="filter-text">
-          <p data-filter=".kader">Een Kijkgat vormt een kader voor de wereld om je heen. 
-            Het laat je focussen op specifieke beelden, waar je zonder dit kader niet zomaar naar zou kijken. 
+          <p data-filter=".kader">Een Kijkgat vormt een kader voor de wereld om je heen.
+            Het laat je focussen op specifieke beelden, waar je zonder dit kader niet zomaar naar zou kijken.
             Een kader om ruis weg te halen en zo meer te kunnen zien. </p>
-          <p data-filter=".rond">Het gat is rond, om associaties met veel voorkomende rechthoekige kaders te vermijden. 
-            Zo wordt het kijken door een Kijkgat niet in direct verband gebracht met bijvoorbeeld fotografie, 
+          <p data-filter=".rond">Het gat is rond, om associaties met veel voorkomende rechthoekige kaders te vermijden.
+            Zo wordt het kijken door een Kijkgat niet in direct verband gebracht met bijvoorbeeld fotografie,
             een mobiele telefoon of een schilderij. </p>
           <p data-filter=".hetbestondal">Een spiegel, een raam, een deuropening, een omlijsting.
-             Een verrekijker, een vergrootglas, een camera. Een achtergelaten autoband langs de weg, 
-             de tunnels in de oren van Michelle. Een kaartje met een gat, een poster met een gat, een muur met een gat. 
+            Een verrekijker, een vergrootglas, een camera. Een achtergelaten autoband langs de weg,
+            de tunnels in de oren van Michelle. Een kaartje met een gat, een poster met een gat, een muur met een gat.
 
-             Een gat, het bestond al. Kijkgat nog niet.</p>
-          <p data-filter=".geenontwerp">Een kijkgat heeft geen vaste kleur of ontwerp. Hierdoor behoudt 
-            het de focus op wat er door het gat te zien is. Het enige vaste is de vorm: 
+            Een gat, het bestond al. Kijkgat nog niet.</p>
+          <p data-filter=".geenontwerp">Een kijkgat heeft geen vaste kleur of ontwerp. Hierdoor behoudt
+            het de focus op wat er door het gat te zien is. Het enige vaste is de vorm:
             een kaartje met een gat. Het uiterlijk hiervan wordt bepaald door het gebruik en de gebruiker.</p>
-            <p data-filter=".nietrond">Het gat is rond, maar het gaat niet om de rondheid van een Kijkgat.
-              Niet elk Kijkgat wordt op de millimeter nauwkeurig gereproduceerd, waardoor niet elk Kijkgat
+          <p data-filter=".nietrond">Het gat is rond, maar het gaat niet om de rondheid van een Kijkgat.
+            Niet elk Kijkgat wordt op de millimeter nauwkeurig gereproduceerd, waardoor niet elk Kijkgat
             altijd precies hetzelfde eruit komt te zien. Voor het gebruik van Kijkgat maakt dit echter
-          geen verschil. Het gaat niet om de cirkel, het gaat over wat je er doorheen ziet.</p>
+            geen verschil. Het gaat niet om de cirkel, het gaat over wat je er doorheen ziet.</p>
         </div>
 
         <div class="grid" id="gallery">
           <div class="grid-item kader">
-            <a data-fslightbox="gallery" href= "assets/images/isotope/kader_1.jpg">
+            <a data-fslightbox="gallery" href="assets/images/isotope/kader_1.jpg">
               <img src="/assets/images/isotope/kader_1.jpg" alt="kijkgat" />
             </a>
           </div>
           <div class="grid-item kader">
-            <a data-fslightbox="gallery" href= "assets/images/isotope/kader_2.jpg">
+            <a data-fslightbox="gallery" href="assets/images/isotope/kader_2.jpg">
               <img src="/assets/images/isotope/kader_2.jpg" alt="kijkgat" />
             </a>
           </div>
           <div class="grid-item kader">
-            <a data-fslightbox="gallery" href= "assets/images/isotope/kader_3.jpg">
+            <a data-fslightbox="gallery" href="assets/images/isotope/kader_3.jpg">
               <img src="/assets/images/isotope/kader_3.jpg" alt="kijkgat" />
             </a>
           </div>
           <div class="grid-item rond">
-            <a data-fslightbox="gallery" href= "assets/images/isotope/rond_1.jpg">
+            <a data-fslightbox="gallery" href="assets/images/isotope/rond_1.jpg">
               <img src="/assets/images/isotope/rond_1.jpg" alt="kijkgat" />
             </a>
           </div>
           <div class="grid-item rond">
-            <a data-fslightbox="gallery" href= "assets/images/isotope/rond_2.jpg">
+            <a data-fslightbox="gallery" href="assets/images/isotope/rond_2.jpg">
               <img src="/assets/images/isotope/rond_2.jpg" alt="kijkgat" />
             </a>
           </div>
           <div class="grid-item rond">
-            <a data-fslightbox="gallery" href= "assets/images/isotope/rond_3.jpg">
+            <a data-fslightbox="gallery" href="assets/images/isotope/rond_3.jpg">
               <img src="/assets/images/isotope/rond_3.jpg" alt="kijkgat" />
             </a>
           </div>
           <div class="grid-item nietrond">
-            <a data-fslightbox="gallery" href= "assets/images/isotope/nietrond_1.jpg">
+            <a data-fslightbox="gallery" href="assets/images/isotope/nietrond_1.jpg">
               <img src="/assets/images/isotope/nietrond_1.jpg" alt="kijkgat" />
             </a>
           </div>
           <div class="grid-item nietrond">
-            <a data-fslightbox="gallery" href= "assets/images/isotope/nietrond_2.jpg">
+            <a data-fslightbox="gallery" href="assets/images/isotope/nietrond_2.jpg">
               <img src="/assets/images/isotope/nietrond_2.jpg" alt="kijkgat" />
             </a>
           </div>
           <div class="grid-item nietrond">
-            <a data-fslightbox="gallery" href= "assets/images/isotope/nietrond_3.jpg">
+            <a data-fslightbox="gallery" href="assets/images/isotope/nietrond_3.jpg">
               <img src="/assets/images/isotope/nietrond_3.jpg" alt="kijkgat" />
             </a>
           </div>
           <div class="grid-item geenontwerp">
-            <a data-fslightbox="gallery" href= "assets/images/isotope/geenontwerp_1.jpg">
+            <a data-fslightbox="gallery" href="assets/images/isotope/geenontwerp_1.jpg">
               <img src="/assets/images/isotope/geenontwerp_1.jpg" alt="kijkgat" />
             </a>
           </div>
           <div class="grid-item geenontwerp">
-            <a data-fslightbox="gallery" href= "assets/images/isotope/geenontwerp_2.jpg">
+            <a data-fslightbox="gallery" href="assets/images/isotope/geenontwerp_2.jpg">
               <img src="/assets/images/isotope/geenontwerp_2.jpg" alt="kijkgat" />
             </a>
           </div>
           <div class="grid-item geenontwerp">
-            <a data-fslightbox="gallery" href= "assets/images/isotope/geenontwerp_3.jpg">
+            <a data-fslightbox="gallery" href="assets/images/isotope/geenontwerp_3.jpg">
               <img src="/assets/images/isotope/geenontwerp_3.jpg" alt="kijkgat" />
             </a>
           </div>
           <div class="grid-item hetbestondal">
-            <a data-fslightbox="gallery" href= "assets/images/isotope/hetbestondal_1.jpg">
+            <a data-fslightbox="gallery" href="assets/images/isotope/hetbestondal_1.jpg">
               <img src="/assets/images/isotope/hetbestondal_1.jpg" alt="kijkgat" />
             </a>
           </div>
           <div class="grid-item hetbestondal">
-            <a data-fslightbox="gallery" href= "assets/images/isotope/hetbestondal_2.jpg">
+            <a data-fslightbox="gallery" href="assets/images/isotope/hetbestondal_2.jpg">
               <img src="/assets/images/isotope/hetbestondal_2.jpg" alt="kijkgat" />
             </a>
           </div>
           <div class="grid-item hetbestondal">
-            <a data-fslightbox="gallery" href= "assets/images/isotope/hetbestondal_3.jpg">
+            <a data-fslightbox="gallery" href="assets/images/isotope/hetbestondal_3.jpg">
               <img src="/assets/images/isotope/hetbestondal_3.jpg" alt="kijkgat" />
             </a>
           </div>
-          
+
         </div>
 
       </section>
@@ -271,32 +286,23 @@
           </div>
         </div>
       </section>
-        
+
       <section id="contact">
-        <button class="giant-circle-button link" id="activateCamera">
-          Ik durf wel wat
-        </button>
-        <div class="align-centre-flex">
-          <div id="camera-container">
-            <video width="250" height="250" id="camera-view" autoplay playsinline></video>
-          </div>
-        </div>
+
       </section>
 
       <div class="context_text mx-auto">
-        <span id="cta_text">Samenwerken met Kijkgat?</span>
-        <img id="arrow" src="assets/images/arrow.png" alt="arrow" />
+        Ook samenwerken met Kijkgat?
+        <a href="mailto:mail@kijkgat.com" class="learn-more">Contact</a>
       </div>
 
       <footer id="footer">
+        <div class="social_icons">
+          <a href="https://www.instagram.com/kijkgaten/" target="_blank"><sl-icon class="social_icon"
+              name="instagram"></sl-icon></a>
+          <a href="https://www.linkedin.com/company/kijkgat/"><sl-icon class="social_icon"
+              name="linkedin"></sl-icon></a>
 
-        <div class="left_footer">
-          <div class="social_icons">
-            <a href="https://www.instagram.com/kijkgaten/" target="_blank"><sl-icon class="social_icon"
-                name="instagram"></sl-icon></a>
-            <a href="https://www.linkedin.com/company/kijkgat/"><sl-icon class="social_icon"
-                name="linkedin"></sl-icon></a>
-          </div>
 
           <div class="left_footer_text">
             <div><a href="mailto:mail@kijkgat.com">mail@kijkgat.com</a></div>
@@ -305,15 +311,18 @@
           </div>
         </div>
 
-        <div class="right_footer">
-          <img src="assets/images/michenalle.png" alt="allert sjabbens en michelle van der plaats" />
+
+        <img class="faces" src="assets/images/michenalle.png" alt="allert sjabbens en michelle van der plaats" />
+        <div class="copy_text">
           Kijkgat is een project door Michelle van der Plaats en Allert Sjabbens (2023 - 2024)
         </div>
+
+
+        <p class="last_text">Online gezet door <a class="gum" target="_blank" href="https://potloodgum.com">
+            Potloodgum</a>
+        </p>
       </footer>
 
-      <p class="last_text mx-auto">Online gezet door <a class="gum" target="_blank"
-          href="https://potloodgum.com">Potloodgum</a>
-      </p>
     </main>
 
     <!-- I am sorry mom, I used alot of js and didn't minify any of it but to be honest minify is overrated -->
