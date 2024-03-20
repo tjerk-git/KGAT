@@ -243,17 +243,27 @@ canvas img {
   position: relative;
 }
 
-footer{
-  border-top: 4px dashed var(--off-black);
-  padding-top:4rem;
-}
-
 .circle-text div {
   position: absolute;
   width: 100%;
   height: 100%;
   text-align: center;
   transform-origin: bottom center;
+}
+
+.little_outro{
+  font-size:2rem;
+  text-align:left;
+  width:15rem;
+}
+
+.pgum_containert{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:0.4rem;
+  margin-top:2rem;
+  margin-bottom:2rem;
 }
 
 .circle-text div span {
@@ -277,7 +287,29 @@ footer{
   margin-top: 12rem;
   margin-bottom: 12rem;
   position: relative;
-  height: 10vh;
+  height: 7vh;
+}
+
+.icons_container{
+  display:flex;
+  gap:0.4rem;
+  align-items:center;
+  justify-content:flex-start;
+  padding:2rem;
+}
+
+.icons_container > *:nth-last-child(1){
+  margin-left: auto;
+}
+
+.kijkgat_logo_container{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+}
+
+.kijkgat_logo_container img{
+  width: 12rem;
 }
 
 .loop-container {
@@ -369,7 +401,7 @@ video {
   justify-content: center;
   flex-direction: column;
   width: 15rem;
-  gap: 1rem;
+  gap: 2rem;
   text-align: center;
   font-size:5rem;
 }
@@ -381,47 +413,6 @@ video {
   right: 20px;
 }
 
-.social_icons {
-  text-align: center;
-  padding-left: 1rem;
-}
-
-.faces{
-  width:10rem;
-}
-
-.social_icon {
-  font-size: 5rem;
-  margin-left: 1rem;
-  font-weight: 200;
-}
-
-.left_footer {
-  max-width: 30rem;
-}
-
-.left_footer_text {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  padding-left: 2rem;
-  padding-top: 1rem;
-}
-
-.right_footer {
-  max-width: 20rem;
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-}
-
-.right_footer img {
-  align-self: flex-end;
-  width: 14rem;
-  margin-bottom: 1.3rem;
-}
 
 .copy_text{
   text-align:center;
@@ -472,17 +463,6 @@ video {
 .button {
   cursor: pointer;
   color: var(--off-black);
-}
-
-footer {
-  padding-left: 8rem;
-  padding-right: 8rem;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
-  height: 20dvh;
-  gap:2rem;
 }
 
 main {
@@ -561,13 +541,22 @@ section {
   justify-content: center;
 }
 
-.learn-more{
+.learn-more {
   background: var(--off-black);
-  color: var(--off-white); 
+  color: var(--off-white);
   font-size: 2rem;
   padding: 1rem 2rem;
   border-radius: 2rem;
-  margin-bottom:10rem;
+  margin-bottom: 10rem;
+  position: relative; /* Enables positioning of child elements */
+  cursor: pointer; /* Indicates interactive element */
+  transition: all 0.2s ease-in-out; /* Smooth transitions */
+  box-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.2); /* Default shadow */
+}
+
+.learn-more:hover,
+.learn-more:active {
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover/press */
 }
 
 @media (max-width: 768px) {
@@ -621,67 +610,8 @@ section {
   .mobile_kijkgat {
     margin-bottom: 2rem;
   }
-
-  footer {
-    flex-direction: column;
-    padding-left: 0rem;
-    padding-right: 0rem;
-    height: 100%;
-    padding-top: 2rem;
-  }
-
-  .left_footer {
-    width: 100%;
-    max-width: 100%;
-    align-self: center;
-    padding-bottom: 4rem;
-  }
-
-  .right_footer {
-    width: 100%;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    max-width: 100%;
-    display: block;
-    text-align: left;
-  }
-
-  .right_footer img {
-    width: 100%;
-    display: block;
-  }
-
-  .last_text {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-  }
 }
 
-.gi-ticker {
-  overflow: hidden;
-  position: relative;
-  height: 90px;
-}
-
-.gi-ticker__text {
-  display: flex;
-  white-space: nowrap;
-  box-sizing: content-box;
-  position: absolute;
-  left: 0;
-  top: 0;
-  align-items: center;
-  height: 100%;
-  animation: ticker-anim 66s linear infinite;
-  gap: 1vw;
-}
-
-.gi-ticker__text-element {
-  display: flex;
-  align-items: center;
-}
 
 .text_for_products p { 
   font-size: 2.0rem;
@@ -702,18 +632,5 @@ section {
 
   to {
     transform: rotate(360deg);
-  }
-}
-
-
-@keyframes ticker-anim {
-  0% {
-    visibility: visible;
-    transform: translateX(100vw);
-  }
-
-  50%,
-  100% {
-    transform: translateX(-100%);
   }
 }
