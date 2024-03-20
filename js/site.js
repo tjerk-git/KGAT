@@ -16,6 +16,11 @@ for (i = 0; i < words.length; i++) {
   });
 }
 
+function sendMail() {
+  // open mailclient with pre-filled subject and body
+  window.open('mailto:mail@kijkgat.com');
+}
+
 const grid = document.querySelector('.grid');
 
 var iso = new Isotope(grid, {
