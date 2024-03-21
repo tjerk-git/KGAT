@@ -296,6 +296,7 @@ canvas img {
   align-items: center;
   justify-content: flex-start;
   padding: 2rem;
+  position: relative;
 }
 
 .icons_container>*:nth-last-child(1) {
@@ -306,10 +307,17 @@ canvas img {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: relative;
 }
 
 .kijkgat_logo_container img {
   width: 12rem;
+}
+
+.little_thingy {
+  position: absolute;
+  top: 95px;
+  left: 29px;
 }
 
 .loop-container {
@@ -597,13 +605,6 @@ section {
     transform: scale(3);
   }
 
-  .icons_container img {
-    max-width: 5rem;
-  }
-
-  .little_outro {
-    font-size: 1.6rem;
-  }
 
   .button-group {
     flex-direction: row;
