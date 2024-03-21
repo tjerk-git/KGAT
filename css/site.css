@@ -550,8 +550,7 @@ button {
   border: 0;
   vertical-align: middle;
   text-decoration: none;
-  font-size: inherit;
-  font-family: inherit;
+  color:white;
 }
 
 button.learn-more {
