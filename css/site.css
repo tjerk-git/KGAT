@@ -541,53 +541,52 @@ section {
   justify-content: center;
 }
 
-
-button {
-  position: relative;
-  display: inline-block;
+/* CSS */
+.learn-more {
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #3B3B3B;
   cursor: pointer;
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
   outline: none;
-  border: 0;
-  vertical-align: middle;
+  padding: 16px 24px;
+  text-align: center;
   text-decoration: none;
-  color:white;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  font-family: 'archivo';
+  will-change: transform;
 }
 
-button.learn-more {
-  font-size: 3rem;
-  padding: 2rem;
-  color: var(--off-white);
-  background: var(--off-black);
-  border: 2px solid #3f3f3f;
-  border-radius: 2rem;
-  transition: transform 150ms ease-in-out, background 150ms ease-in-out;
-  box-shadow: 0 0 0 2px #3f3f3f, 0 0.1em 0 0 #7b7b7b;
+.learn-more:disabled {
+  pointer-events: none;
+}
+
+.learn-more:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.learn-more:active {
+  box-shadow: none;
+  transform: translateY(0);
 }
 
 
-
-button.learn-more:hover {
-  background: #363636;
-  transform: translate(0, 0.25em);
-  box-shadow: 0 0 0 2px #3f3f3f, 0 0.2em 0 0 #7b7b7b;
-}
-
-button.learn-more:hover::before {
-  box-shadow: 0 0 0 2px #3d3d3d, 0 0.5em 0 0 #7b7b7b;
-  transform: translate3d(0, 0.5em, -1em);
-  box-shadow: 0 0 0 2px #3f3f3f, 0 0.5em 0 0 #7b7b7b;
-}
-
-button.learn-more:active {
-  background: #3a3a3a;
-  transform: translate(0em, 0.75em);
-  box-shadow: 0 0 0 2px #3f3f3f, 0 0em 0 0 #7b7b7b;
-}
-
-button.learn-more:active::before {
-  box-shadow: 0 0 0 2px #414141, 0 0 #787878;
-  transform: translate3d(0, 0, -1em);
-}
 
 @media (max-width: 768px) {
   .center_controls {
