@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+
+    <main class="container">
+      <h1>Kijkgat inzendingen</h1>
+      <form hx-post="https://submissions.kijkgat.com/submissions" hx-encoding="multipart/form-data"
+        hx-target="#response" hx-indicator="#indicator">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="E-mailadres" required><br><br>
+
+        <label for="name">Naam:</label>
+        <input type="text" id="name" name="name" placeholder="naam" required><br><br>
+
+        <label for="image">Inzending:</label>
+        <input type="file" id="image" name="image" accept="image/*" required onchange="previewImage(event)"><br><br>
+        <img id="preview" src="#" alt="Image Preview" style="display: none; max-width: 200px; max-height: 200px;">
+
+        <img id="indicator" class="htmx-indicator" src="/loader.gif" />
+        <input type="submit" value="Inzending versturen">
+      </form>
+
+      <div id="response"></div>
+    </main>
+
+    <script src="https://unpkg.com/htmx.org@latest/dist/htmx.js"></script>
+    <script>
+      function previewImage(event) {
+        const preview = document.getElementById('preview');
+        preview.style.display = 'block';
+        preview.src = URL.createObjectURL(event.target.files[0]);
+      }
+    </script>
+  </body>
+
+</html>
