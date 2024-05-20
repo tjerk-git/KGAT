@@ -12,8 +12,7 @@
 
     <main class="container">
       <h1>Kijkgat inzendingen</h1>
-      <form hx-boost="true" action="https://submissions.kijkgat.com/submissions" method="post"
-        enctype="multipart/form-data" hx-target="#response" hx-indicator="#indicator">
+      <form enctype="multipart/form-data">
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" placeholder="E-mailadres" required><br><br>
 
@@ -31,13 +30,24 @@
       <div id="response"></div>
     </main>
 
-    <script src="https://unpkg.com/htmx.org@latest/dist/htmx.js"></script>
     <script>
       function previewImage(event) {
         const preview = document.getElementById('preview');
         preview.style.display = 'block';
         preview.src = URL.createObjectURL(event.target.files[0]);
       }
+
+      // post the form data to the server
+      document.querySelector('form').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const response = await fetch('https://submissions.kijkgat.com/submissions/new/', {
+          method: 'POST',
+          body: formData
+        });
+        const text = await response.text();
+        document.getElementById('response').innerHTML = text;
+      });
     </script>
   </body>
 
